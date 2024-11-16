@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Tour - Start</title>
-    <style>
-		body {
-			font-family: Arial, sans-serif;
-            text-align: center;
+	<style>
+		header {
+			text-align: center;
 		}
         main {
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
-			align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 20px;
         }
-        button {
-			max-width: 300px;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #6200ea;
+
+		.button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        ion-button {
+            width: 100%;
+			font-size: 16px;
+        }
+
+		ion-button::part(native) {
+            background-color: rgb(142, 47, 204);
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
         }
-        button:hover {
-            background-color: #58c21f;
+
+        ion-button:hover::part(native) {
+            background-color: rgb(9, 128, 0);
         }
     </style>
 </head>
@@ -34,15 +44,29 @@
     <header>
         <h1>Welcome to City Tour</h1>
         <p>Start exploring with your camera or location!</p>
+		<link
+		href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+		rel="stylesheet"
+		/>
     </header>
 
     <main>
-        <button id="start-camera">Use Camera</button>
-        <button id="get-location">Use GPS</button>
-		<button id="find-route">Find Green Route</button>
+        <div class="button-container">
+            <ion-button id="start-camera">Use Camera</ion-button>
+            <ion-button id="get-location">Use GPS</ion-button>
+            <ion-button id="find-route">Find Green Route</ion-button>
+        </div>
         <p id="output"></p>
     </main>
 
     <script src="app.js"></script>
+	<script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
 </body>
 </html>
