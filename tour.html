@@ -3,50 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Tour - Highlights</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tour Highlights</title>
 </head>
 <body>
-    <header>
-        <h1>Tour Highlights</h1>
-    </header>
-
-    <main>
-        <p id="city-name">Loading city...</p>
-        <ul id="locations"></ul>
-        <button onclick="goBack()">Back to Start</button>
-    </main>
+    <h1>Your Tour Based on Location</h1>
+    <ul id="highlights"></ul>
 
     <script>
-        // Datenbank der Sehenswürdigkeiten
-        const cityHighlights = {
+        // Beispiel-Datenbank basierend auf Regionen
+        const tourData = {
             berlin: ["Brandenburger Tor", "Reichstag", "Museum Island"],
             paris: ["Eiffelturm", "Louvre", "Notre Dame"],
-            london: ["Big Ben", "London Eye", "Tower of London"],
+            london: ["Big Ben", "London Eye", "Tower of London"]
         };
 
-        // Hole die gewählte Stadt aus der URL
+        // URL-Parameter abrufen
         const params = new URLSearchParams(window.location.search);
-        const city = params.get('city');
+        const lat = parseFloat(params.get("lat"));
+        const lon = parseFloat(params.get("lon"));
 
-        // Aktualisiere die Seite basierend auf der gewählten Stadt
-        const cityNameElement = document.getElementById('city-name');
-        const locationsList = document.getElementById('locations');
+        const highlights = document.getElementById("highlights");
 
-        if (city && cityHighlights[city]) {
-            cityNameElement.textContent = `Highlights in ${city.charAt(0).toUpperCase() + city.slice(1)}`;
-            cityHighlights[city].forEach(location => {
-                const li = document.createElement('li');
-                li.textContent = location;
-                locationsList.appendChild(li);
-            });
+        // Region simulieren (dies könnte mit einem echten Geo-Dienst wie Google Maps erweitert werden)
+        if (lat && lon) {
+            if (lat > 48 && lat < 52 && lon > 13 && lon < 14) {
+                // Berlin Koordinaten
+                tourData.berlin.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    highlights.appendChild(li);
+                });
+            } else {
+                highlights.textContent = "No data available for your location.";
+            }
         } else {
-            cityNameElement.textContent = "City not found!";
-        }
-
-        // Zurück zur Startseite
-        function goBack() {
-            window.location.href = "index.html";
+            highlights.textContent = "Invalid location.";
         }
     </script>
 </body>
