@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Tour - Highlights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tour Highlights</h1>
+    </header>
+
+    <main>
+        <p id="city-name">Loading city...</p>
+        <ul id="locations"></ul>
+        <button onclick="goBack()">Back to Start</button>
+    </main>
+
+    <script>
+        // Datenbank der Sehenswürdigkeiten
+        const cityHighlights = {
+            berlin: ["Brandenburger Tor", "Reichstag", "Museum Island"],
+            paris: ["Eiffelturm", "Louvre", "Notre Dame"],
+            london: ["Big Ben", "London Eye", "Tower of London"],
+        };
+
+        // Hole die gewählte Stadt aus der URL
+        const params = new URLSearchParams(window.location.search);
+        const city = params.get('city');
+
+        // Aktualisiere die Seite basierend auf der gewählten Stadt
+        const cityNameElement = document.getElementById('city-name');
+        const locationsList = document.getElementById('locations');
+
+        if (city && cityHighlights[city]) {
+            cityNameElement.textContent = `Highlights in ${city.charAt(0).toUpperCase() + city.slice(1)}`;
+            cityHighlights[city].forEach(location => {
+                const li = document.createElement('li');
+                li.textContent = location;
+                locationsList.appendChild(li);
+            });
+        } else {
+            cityNameElement.textContent = "City not found!";
+        }
+
+        // Zurück zur Startseite
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
