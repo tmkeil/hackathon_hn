@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera View</title>
+</head>
+<body>
+    <h1>Camera Active</h1>
+    <p>Use the camera to scan QR codes or capture the city!</p>
+    <video autoplay playsinline></video>
+
+    <script>
+        const video = document.querySelector("video");
+
+        // Kamera-Stream anzeigen
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error("Error accessing camera:", error);
+            });
+    </script>
+</body>
+</html>

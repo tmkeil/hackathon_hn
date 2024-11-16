@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Highlights</title>
+</head>
+<body>
+    <h1>Your Tour Based on Location</h1>
+    <ul id="highlights"></ul>
+
+    <script>
+        // Beispiel-Datenbank basierend auf Regionen
+        const tourData = {
+            berlin: ["Brandenburger Tor", "Reichstag", "Museum Island"],
+            paris: ["Eiffelturm", "Louvre", "Notre Dame"],
+            london: ["Big Ben", "London Eye", "Tower of London"]
+        };
+
+        // URL-Parameter abrufen
+        const params = new URLSearchParams(window.location.search);
+        const lat = parseFloat(params.get("lat"));
+        const lon = parseFloat(params.get("lon"));
+
+        const highlights = document.getElementById("highlights");
+
+        // Region simulieren (dies könnte mit einem echten Geo-Dienst wie Google Maps erweitert werden)
+        if (lat && lon) {
+            if (lat > 48 && lat < 52 && lon > 13 && lon < 14) {
+                // Berlin Koordinaten
+                tourData.berlin.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    highlights.appendChild(li);
+                });
+            } else {
+                highlights.textContent = "No data available for your location.";
+            }
+        } else {
+            highlights.textContent = "Invalid location.";
+        }
+    </script>
+</body>
+</html>
