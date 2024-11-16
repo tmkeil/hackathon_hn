@@ -1,14 +1,49 @@
-ion-content {
+/* Gesamter Body zentrieren */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	height: 100vh;
-	background-color: #f9f9f9;
+	height: 100vh; /* Vollbildhöhe */
+	background-color: #f8f9fa; /* Heller Hintergrund */
   }
-
-  .city-title {
+  
+  /* Überschrift-Styling */
+  h1.title {
+	margin-bottom: 20px; /* Abstand zur Schaltfläche */
 	font-size: 2rem;
-	text-align: center;
-	color: #333;
+	color: #333; /* Dunkle Textfarbe */
   }
+  
+  /* Container für die Buttons */
+  .button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%; /* Vollbreite des Containers */
+	max-width: 400px; /* Begrenzte Breite */
+  }
+  
+  /* Styling für die Buttons */
+  .button-container button {
+	width: 100%; /* Buttons gleich breit */
+	max-width: 300px; /* Begrenzte Breite */
+	padding: 10px 15px; /* Innenabstand */
+	margin: 10px 0; /* Abstand zwischen Buttons */
+	background-color: #007bff; /* Blau */
+	color: white; /* Weißer Text */
+	border: none; /* Keine Rahmen */
+	border-radius: 5px; /* Abgerundete Ecken */
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* Animation für Hover */
+  }
+  
+  /* Hover-Effekt für Buttons */
+  .button-container button:hover {
+	background-color: #0056b3; /* Dunkleres Blau */
+  }
+  

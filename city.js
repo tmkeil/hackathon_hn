@@ -11,3 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
 	  cityTitle.textContent = "City not found.";
 	}
   });
+
+  function tour()
+  {
+
+  }
+
+  function greenRoute()
+  {
+
+  }
+
+  function social()
+  {
+
+  }
+
+  function suggest()
+  {
+	
+  }
