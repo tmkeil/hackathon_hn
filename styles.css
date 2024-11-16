@@ -1,30 +1,72 @@
-ion-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;  /* Horizontale Zentrierung */
-    justify-content: space-between;  /* Vertikale Verteilung mit gleichmäßigen Abständen */
-    text-align: center;
-    background-color: #f8f9fa;
-    height: 100vh;  /* Volle Höhe des Viewports */
-    padding: 0;
-    margin: 0;
-}
-
-.title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-ion-button {
-    width: 200px;
-}
+/* Body: zentrierter Inhalt, Hintergrund */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh; /* Vollbildhöhe */
+	background-color: #f8f9fa; /* Heller Hintergrund */
+  }
+  
+  /* Header */
+  .header {
+	width: 100%;
+	background-color: #007bff; /* Blau */
+	color: white; /* Weißer Text */
+	text-align: center;
+	padding: 15px 0;
+	font-size: 1.5rem;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main Content */
+  .content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 400px; /* Begrenzte Breite */
+  }
+  
+  /* Überschrift */
+  h1.title {
+	margin-bottom: 20px;
+	font-size: 2rem;
+	color: #333;
+	text-align: center;
+  }
+  
+  /* Button Container */
+  .button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%; /* Vollbreite des Containers */
+	max-width: 400px; /* Begrenzte Breite */
+  }
+  
+  /* Buttons */
+  .btn {
+	width: 100%; /* Buttons gleich breit */
+	max-width: 300px;
+	padding: 10px 15px;
+	margin: 10px 0;
+	background-color: #007bff; /* Blau */
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	text-align: center;
+  }
+  
+  /* Hover-Effekt für Buttons */
+  .btn:hover {
+	background-color: #0056b3; /* Dunkleres Blau */
+  }
+  
