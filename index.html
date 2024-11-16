@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Tour - Start</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+		body {
+			font-family: Arial, sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
+		}
+        main {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			align-items: center;
         }
         button {
-            margin: 20px;
+			max-width: 300px;
+            margin: 10px;
             padding: 10px 20px;
             background-color: #6200ea;
             color: white;
@@ -21,7 +26,7 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #3700b3;
+            background-color: #58c21f;
         }
     </style>
 </head>
@@ -34,6 +39,7 @@
     <main>
         <button id="start-camera">Use Camera</button>
         <button id="get-location">Use GPS</button>
+		<button id="find-route">Find Green Route</button>
         <p id="output"></p>
     </main>
 
