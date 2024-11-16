@@ -1,5 +1,5 @@
 function scanQRCode() {
-    const scannedCity = prompt("Simulated QR Code Stuff: Type a City", "Berlin");
+    const scannedCity = prompt("Simulated QR Code Stuff: Type a City", "Heilbronn");
     if (scannedCity) {
         window.location.href = `city.html?city=${encodeURIComponent(scannedCity)}`;
     }
@@ -25,15 +25,15 @@ function useGPS() {
     }
 }
 
-function useCam() {
-    navigator.mediaDevices
-        .getUserMedia({ video: true })
-        .then((stream) => {
-            alert("Camera started successfully!");
-            window.location.href = "camera.html";
-        })
-        .catch((error) => {
-            alert("Camera access denied or not available.");
-            console.error(error);
-        });
+function greenRoute() {
+    // navigator.mediaDevices
+    //     .getUserMedia({ video: true })
+    //     .then((stream) => {
+    //         alert("Camera started successfully!");
+    //         window.location.href = "camera.html";
+    //     })
+    //     .catch((error) => {
+    //         alert("Camera access denied or not available.");
+    //         console.error(error);
+    //     });
 }
