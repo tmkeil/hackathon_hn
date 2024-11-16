@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Route</title>
+  <link rel="stylesheet" href="greenRoute.css">
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Find a Green Route</h1>
+  </header>
+  <main class="content">
+    <!-- Search Field -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for locations..." />
+      <button onclick="addChip()">Add</button>
+    </div>
+
+    <!-- Chips Container -->
+    <h2>Popular Places</h2>
+    <div class="chips-wrapper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="chipsContainer">
+          <div class="swiper-slide chip">
+            Hospital <span class="remove-chip" onclick="removeChip(this)">x</span>
+          </div>
+          <div class="swiper-slide chip">
+            Police <span class="remove-chip" onclick="removeChip(this)">x</span>
+          </div>
+          <div class="swiper-slide chip">
+            Eating <span class="remove-chip" onclick="removeChip(this)">x</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Swiper.js -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="greenRoute.js"></script>
+</body>
+</html>

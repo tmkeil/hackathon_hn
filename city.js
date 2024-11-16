@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function greenRoute()
   {
-
+	window.location.href = "greenRoute.html"
   }
 
   function social()
@@ -29,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function suggest()
   {
-	
+
   }
