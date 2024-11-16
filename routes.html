@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route zum Ziel</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6dWP2vhMNne-6D3gHDKXZqpiUr3DFQXA&callback=initMap&libraries=drawing&v=weekly" async defer></script>
+  <link rel="stylesheet" href="greenRoute.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Route von deinem Standort zum Ziel</h1>
+  </header>
+
+  <main class="content">
+    <h2>Route von deinem Standort zu: <span id="destinationName"></span></h2>
+    <div id="routeContainer">
+      <p>Die Route wird berechnet...</p>
+      <div id="map" style="height: 400px;"></div> <!-- Karte wird hier angezeigt -->
+    </div>
+  </main>
+
+  <script src="routes.js"></script>
+</body>
+</html>
